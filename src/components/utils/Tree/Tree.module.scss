@@ -1,0 +1,22 @@
+.tree {
+  max-width: 1240px;
+  margin: 0 auto;
+  // padding: 0 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.mainButton {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.arrow__tree {
+  width: 6px;
+}

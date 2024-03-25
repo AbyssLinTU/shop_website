@@ -1,0 +1,73 @@
+.flex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.title {
+  font-family: 'Arimo', sans-serif;
+  font-size: 36px;
+  margin-bottom: 78px;
+}
+.wrapper {
+}
+.wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: clamp(
+    80px,
+    calc(80px + (126 - 80) * ((100vw - 400px) / (680 - 400))),
+    126px
+  );
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.prev {
+  cursor: pointer;
+  background: url(../../../img/ArrowPrev.svg) 100% 100% no-repeat;
+  width: 54px;
+  height: 52px;
+  transition: all ease 0.1s;
+  clip-path: circle(50%);
+}
+
+.prev:active {
+  transform: scale(0.95);
+}
+.next {
+  cursor: pointer;
+  background: url(../../../img/ArrowNext.svg) 100% 100% no-repeat;
+  width: 54px;
+  height: 52px;
+  transition: all ease 0.1s;
+  clip-path: circle(50%);
+}
+.next:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 680px) {
+  .buttons {
+    display: none;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .title {
+    font-family: 'Arimo', sans-serif;
+    font-size: max(
+      24px,
+      calc(24px + (36 - 24) * ((100vw - 400px) / (680 - 400)))
+    );
+    margin-bottom: max(
+      32px,
+      calc(32px + (78 - 32) * ((100vw - 400px) / (680 - 400)))
+    );
+  }
+}

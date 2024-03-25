@@ -1,0 +1,64 @@
+.catalogSlot {
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-top: 64px;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.image {
+  width: 922px;
+  object-fit: cover;
+}
+.title {
+  display: none;
+  font-size: 40px;
+  font-weight: 400;
+  color: #272727;
+  font-family: 'Arimo', sans-serif;
+}
+.catalog__mobile {
+  display: none;
+  width: 100%;
+}
+@media (max-width: 1280px) {
+  .image {
+    width: max(
+      636px,
+      calc(636px + (922 - 636) * ((100vw - 1024px) / (1280 - 1024)))
+    );
+  }
+}
+@media (max-width: 1024px) {
+  .image {
+    width: 100%;
+  }
+  .catalog {
+    display: none;
+  }
+  .catalog__mobile {
+    display: block;
+  }
+  .title {
+    display: block;
+    font-size: max(
+      28px,
+      calc(32px + (40 - 32) * ((100vw - 767px) / (1024 - 767)))
+    );
+  }
+  .catalogSlot {
+    margin-top: max(
+      32px,
+      calc(32px + (52 - 32) * ((100vw - 767px) / (1024 - 767)))
+    );
+    margin-bottom: max(
+      42px,
+      calc(42px + (90 - 42) * ((100vw - 767px) / (1024 - 767)))
+    );
+    flex-direction: column;
+    gap: max(32px, calc(32px + (52 - 32) * ((100vw - 767px) / (1024 - 767))));
+  }
+}

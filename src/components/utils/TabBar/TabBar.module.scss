@@ -1,0 +1,44 @@
+@mixin tabs{
+  font-size: 24px;
+  font-family: "Arimo",sans-serif;
+  border: 0;
+  padding: 5px 16px;
+  background: none;
+  transition: all ease 0.3s;
+}
+.wrapper{
+  width: 816px;
+}
+.tabs{
+  display: flex;
+  flex: 1 1 auto;
+  margin-bottom: 36px;
+}
+.active{
+  @include tabs();
+  border-bottom: 5px solid #D08C4D;
+  color: #000000;
+}
+.none_active{
+  @include tabs();
+  color: #555555;
+  border-bottom: 5px solid #DBC8B8;
+  
+}
+.last_tab{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.text_bar{
+  font-size: 16px;
+  font-family: "Arimo",sans-serif;
+  line-height: 24px;
+}
+.paragraph{
+  margin: 0;
+}
+.paragraph:not(:last-child) {
+  margin: 0 0 8px 0;
+}
+

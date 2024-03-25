@@ -1,0 +1,120 @@
+@mixin width() {
+  max-width: 286px;
+}
+@mixin trans($time: 3) {
+  transition: all ease #{$time/10}s;
+}
+
+.catalogItem {
+  width: 286px;
+  font-size: 16px;
+  font-family: 'Arimo', 'sans-serif';
+  font-weight: 400;
+  &__mobile {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Arimo', 'sans-serif';
+    font-weight: 400;
+  }
+}
+.catalog__mobile {
+  cursor: pointer;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 18px 20px 0 20px;
+  position: relative;
+  font-size: 18px;
+  @include trans();
+  &:hover {
+    background-color: #ede0d5;
+    &::before {
+      right: 8px;
+    }
+  }
+  &:active {
+    @include trans(1);
+    background-color: #e7d5c7;
+  }
+}
+.catalog__inner {
+  cursor: pointer;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 12px 12px 0 12px;
+  position: relative;
+  font-size: 16px;
+  @include trans();
+  &::before {
+    content: '';
+    position: absolute;
+    top: 17px;
+    right: 13px;
+    background: url(../../../img/Arrow.svg) 100% 100% no-repeat;
+    width: 12px;
+    height: 12px;
+    @include trans();
+  }
+  &:hover {
+    background-color: #ede0d5;
+    &::before {
+      right: 8px;
+    }
+  }
+  &:active {
+    @include trans(1);
+    background-color: #e7d5c7;
+  }
+}
+.catalog {
+  border: 1px solid #bfbbbb;
+  width: 286px;
+}
+
+.title {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.last {
+  border-bottom: 0px solid #dddddd;
+  padding-bottom: 18px;
+}
+.catalogMain {
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Arimo', 'sans-serif';
+  font-weight: 400;
+  background-color: #e7d5c7;
+  padding: 12px 12px 8px 12px;
+}
+@media (max-width: 1024px) {
+  .catalog {
+    border: 0px solid #bfbbbb;
+    width: calc(100vw - 57px);
+  }
+
+  .catalog__mobile {
+    cursor: pointer;
+    height: 100%;
+    width: calc(100vw - 40px);
+    box-sizing: border-box;
+    padding: max(14px, calc(14px + (18 - 14) * (100vw - 400px) / (1024 - 400)))
+      20px 0 20px;
+    position: relative;
+    font-size: max(
+      13px,
+      calc(13px + (18 - 13) * (100vw - 400px) / (1024 - 400))
+    );
+    @include trans();
+    &:hover {
+      background-color: #ede0d5;
+      &::before {
+        right: 8px;
+      }
+    }
+    &:active {
+      @include trans(1);
+      background-color: #e7d5c7;
+    }
+  }
+}
